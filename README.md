@@ -34,6 +34,17 @@ local _partsToExportArray = [];
 
 Hey now, that's a good point. Why are we running this all on the server and not the client? Well, to start, the server has more accurate positions than the client. If this is ran on the client, farther objects will be exported slightly off their true position. Secondly, if you ran this on the client, you would have to allow a lot of battleye exceptions so that the player doesn't get kicked.
 
+## Instructions:
+* Run the script on the server via SQF Injector after setting your config.
+* Go to your server RPT file, and copy the exported section.
+* Create a new sqf file in your dayz_server folder, and paste the copied section into it.
+    * You can name it whatever you want.
+    * You can also (and probably should) put it in a folder, if you want.
+* Remove the timestamps from the copied section. (see video on how I did this).
+* Change the `local _center = ` to the new location.
+   * At this point you may want to copy the contents of your new file and paste it into the SQF injector to make sure it works as you expect (like how I did it in the video).
+* Call that file from server_functions.sqf.
+
 ## What this doesn't do:
 * It doesn't export the objects into the SQL database.
 * It doesn't export the objects into a file, you need to copy and paste from the rpt it into a file yourself.
