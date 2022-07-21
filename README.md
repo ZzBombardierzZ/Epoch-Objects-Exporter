@@ -47,6 +47,7 @@ Hey now, that's a good point. Why are we running this all on the server and not 
 
 ## What this doesn't do:
 * It doesn't export the objects into the SQL database.
+* It doesn't remove the objects from the SQL database for you, if you want to move them instead of copying them.
 * It doesn't export the objects into a file, you need to copy and paste from the rpt it into a file yourself.
 * It doesn't allow you to rotate objects.
     * It would be really cool if you could rotate objects, but I don't know how to do that. That's because this is using a center point to spawn the objects, so if you turned them all 45 degrees then you would have a big, ugly problem.
