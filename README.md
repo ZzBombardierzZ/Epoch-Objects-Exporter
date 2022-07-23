@@ -54,4 +54,5 @@ Hey now, that's a good point. Why are we running this all on the server and not 
 
 
 ## Version History:
-* v1.0: Initial Release. Exports to the server rpt file using BigEgg's Epoch Antihack/Admin Tools SQF Injector.
+* v1.0.1 - 7/22/22: Added a couple more parts to exclude from extraction.
+* v1.0 - 7/21/22: Initial Release. Exports to the server rpt file using BigEgg's Epoch Antihack/Admin Tools SQF Injector.
