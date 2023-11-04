@@ -25,7 +25,7 @@ if (!((typeOf _x) in ["WeaponHolder_ItemCrowbar","Crow","WeaponHolder","FxWindPo
 	diag_log text format ["if (true) then {"];
 	diag_log text format ["_this = createVehicle ['%1', _center, [], 0, 'CAN_COLLIDE'];",_name];
 	diag_log text format ["_vehicle_%1 = _this;",_count];
-	diag_log text format ["_this setPos%1 %2;",if (_PosTypeASL) then {"ASL"} else {"ATL"},format ["[((_center select 0) + (%2)),((_center select 1) + (%4)), %5]",(_centerATL select 0),((_pos select 0) - (_centerATL select 0)),(_centerATL select 1),((_pos select 1) - (_centerATL select 1)),((_pos select 2) + _z_adjustment)]];
+	diag_log text format ["_this setPos%1 %2;",if (_PosTypeASL) then {"ASL"} else {"ATL"},format ["[((_center select 0) + (%2)),((_center select 1) + (%4)), %5]",(_centerATL select 0),((_pos select 0) - (_centerATL select 0)),(_centerATL select 1),((_pos select 1) - (_centerATL select 1)),format ["(%1) + (_z_adjustment)", (_pos select 2)]]];
     if (_getVector && (str(_vector select 1) != "[0,0,1]")) then {
         diag_log text format ["_this setVectorDirAndUp %1;",_vector];
     } else {
