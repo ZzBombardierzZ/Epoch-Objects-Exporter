@@ -10,6 +10,7 @@ local _objects = nearestObjects [_centerATL, _partsToExportArray, _radius];
 local _count = 0;
 diag_log "-----EXPORTING OBJECTS-----";
 diag_log text format ["local _center = %1;", _centerATL];
+diag_log text format ["local _z_adjustment = %1;", 0];
 {
 if (!((typeOf _x) in ["WeaponHolder_ItemCrowbar","Crow","WeaponHolder","FxWindPollen1","FXCrWindLeaf1","FXCrWindLeaf2","FXCrWindLeaf3","Rubbish4","Rubbish3","Rubbish2","Rubbish1","FxWindRock1","Mosquito","FxWindGrass2","FxWindGrass1"]) && !(_x isKindOf "Man") && typeOf _x != '') then {
 	local _name = typeOf _x;
@@ -24,7 +25,7 @@ if (!((typeOf _x) in ["WeaponHolder_ItemCrowbar","Crow","WeaponHolder","FxWindPo
 	diag_log text format ["if (true) then {"];
 	diag_log text format ["_this = createVehicle ['%1', _center, [], 0, 'CAN_COLLIDE'];",_name];
 	diag_log text format ["_vehicle_%1 = _this;",_count];
-	diag_log text format ["_this setPos%1 %2;",if (_PosTypeASL) then {"ASL"} else {"ATL"},format ["[((_center select 0) + (%2)),((_center select 1) + (%4)), %5]",(_centerATL select 0),((_pos select 0) - (_centerATL select 0)),(_centerATL select 1),((_pos select 1) - (_centerATL select 1)),(_pos select 2)]];
+	diag_log text format ["_this setPos%1 %2;",if (_PosTypeASL) then {"ASL"} else {"ATL"},format ["[((_center select 0) + (%2)),((_center select 1) + (%4)), %5]",(_centerATL select 0),((_pos select 0) - (_centerATL select 0)),(_centerATL select 1),((_pos select 1) - (_centerATL select 1)),((_pos select 2) + _z_adjustment)]];
     if (_getVector && (str(_vector select 1) != "[0,0,1]")) then {
         diag_log text format ["_this setVectorDirAndUp %1;",_vector];
     } else {
